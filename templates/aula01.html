@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block conteudo %}
+    <h1>👤 Perfil do Personagem</h1>
+    
+    <div style="padding: 20px;" class="{% if poder %} aura-glow {% endif %}">
+        
+        <h2>Nick: <span style="color: #00d2ff">{{ nick }}</span></h2>
+        <h3>Classe: {{ classe }}</h3>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <span>HP: {{ hp }} / {{ max_hp }}</span>
+            <span>{% if hp <= 20 %} ⚠️ PERIGO! {% endif %}</span>
+        </div>
+        
+        <div class="health-bar-container">
+            <div class="health-bar" 
+                 style="width: {{ (hp / max_hp) * 100 }}%; 
+                        background-color: {% if hp <= 30 %} #ff4444 {% else %} #44ff44 {% endif %};">
+            </div>
+        </div>
+
+        {% if poder %}
+            <p style="color: gold; font-weight: bold;">✨ MODO ESPECIAL ATIVADO! ✨</p>
+        {% endif %}
+    </div>
+
+    <div class="atividade">
+        <h3>🎯 Missão 01: Manipulando Variáveis</h3>
+        <p>1. Abra <code>student_code/aula01_variaveis.py</code>.</p>
+        <p>2. Mude o <code>hp_atual</code> para <strong>20</strong> e veja a barra ficar vermelha.</p>
+        <p>3. Mude <code>modo_especial</code> para <strong>False</strong> e veja a aura sumir.</p>
+    </div>
+{% endblock %}

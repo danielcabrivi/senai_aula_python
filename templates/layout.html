@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Visual Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+    <a href="/">1. Variáveis</a>
+    <a href="/porta/teste">2. Condicionais</a>
+    <a href="/loja/10">3. Repetição</a>
+    <a href="/media/7.0/8.0">4. Média</a>
+    <a href="/balada/17">5. Idade</a>
+</nav>
+
+    <div class="container">
+        {% block conteudo %}{% endblock %}
+    </div>
+</body>
+</html>

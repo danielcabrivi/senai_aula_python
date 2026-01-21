@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block conteudo %}
+    <h1>🔞 Verificador de Idade</h1>
+    <p>Idade informada: <code>/balada/<strong>{{ idade_input }}</strong></code></p>
+
+    <div class="id-card {{ css }}">
+        <div class="foto-perfil">
+            {% if permitido %} 😃 {% else %} 👶 {% endif %}
+        </div>
+        
+        <div class="dados-id">
+            <h3>IDADE: {{ idade_input }} ANOS</h3>
+            <div class="carimbo">
+                {{ msg }}
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <h3>🎯 Missão 05: Comparação</h3>
+        <p>1. Tente entrar com 17 anos: <code>/balada/17</code>.</p>
+        <p>2. Tente entrar com 18 anos: <code>/balada/18</code>.</p>
+        <p>3. Abra <code>student_code/aula05_idade.py</code>.</p>
+        <p>4. <strong>Desafio:</strong> Mude a idade mínima para <strong>21 anos</strong> (Regra dos EUA).</p>
+    </div>
+{% endblock %}

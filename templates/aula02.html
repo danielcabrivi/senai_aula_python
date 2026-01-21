@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block conteudo %}
+    <h1>🔐 Sistema de Segurança</h1>
+    <p>Senha testada via URL: <code>.../porta/<strong>{{ senha_input }}</strong></code></p>
+
+    <div class="cofre-box {{ css }}">
+        <div class="display-status">
+            {{ status }}
+        </div>
+        <p style="font-size: 0.6em; font-weight: normal; margin-top: 10px;">{{ msg }}</p>
+    </div>
+    
+    <div class="atividade">
+        <h3>🎯 Missão 02: Condicionais (Input)</h3>
+        <p>1. O cofre está trancado. Tente mudar a URL para <code>/porta/1234</code>.</p>
+        <p>2. Abra <code>student_code/aula02_condicionais.py</code>.</p>
+        <p>3. Descubra qual é a "Senha Mestra" (admin) no código!</p>
+        <p>4. <strong>Desafio:</strong> Crie um novo <code>elif</code> para uma senha secreta sua.</p>
+    </div>
+{% endblock %}

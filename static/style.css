@@ -1,0 +1,176 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Menu de Navegação */
+nav {
+    background: #333;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+nav a:hover { color: #00d2ff; }
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* --- AULA 1: HUD JOGO --- */
+.health-bar-container {
+    width: 100%;
+    background: #444;
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+    border: 2px solid #555;
+}
+.health-bar {
+    height: 100%;
+    transition: width 0.5s cubic-bezier(0.4, 0.0, 0.2, 1), background-color 0.5s;
+}
+.aura-glow {
+    border: 2px solid gold;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    animation: pulse 2s infinite;
+}
+
+/* --- AULA 2: COFRE --- */
+.cofre-box {
+    padding: 40px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+.bloqueado {
+    background-color: #590000;
+    border: 4px solid #ff4444;
+    color: #ffaaaa;
+    animation: shake 0.4s;
+}
+.liberado {
+    background-color: #004400;
+    border: 4px solid #00ff00;
+    color: #ccffcc;
+}
+.alerta {
+    background-color: #553300;
+    border: 4px solid orange;
+    color: white;
+}
+
+/* --- AULA 3: LOJA --- */
+.grid-loja {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+.item-card {
+    background: #444;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    border: 1px solid #555;
+}
+.item-raro {
+    border: 1px solid gold;
+    background: #443300;
+    color: gold;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.atividade {
+    margin-top: 30px;
+    background: #333;
+    padding: 15px;
+    border-left: 4px solid #00d2ff;
+    text-align: left;
+}
+
+/* --- AULA 4: BOLETIM --- */
+.boletim-card {
+    background: #333;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 10px solid gray;
+}
+.boletim-card.aprovado { border-top-color: #44ff44; box-shadow: 0 0 15px #44ff4444; }
+.boletim-card.recuperacao { border-top-color: orange; box-shadow: 0 0 15px #ffa50044; }
+.boletim-card.reprovado { border-top-color: #ff4444; box-shadow: 0 0 15px #ff444444; }
+
+.notas-grid { display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.2em; }
+.circulo-media {
+    background: #222;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px auto;
+    border: 3px solid white;
+}
+
+/* --- AULA 5: ID CARD --- */
+.id-card {
+    background: linear-gradient(135deg, #eee, #ccc);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+.foto-perfil { font-size: 4em; background: #fff; padding: 10px; border-radius: 50%; }
+.carimbo {
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 3px solid #333;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+}
+
+/* Estados Visuais da Aula 5 */
+.id-card.bloqueado { background: #500; color: white; border: 2px solid red; }
+.id-card.bloqueado .carimbo { border-color: red; color: red; transform: rotate(10deg); }
+
+.id-card.liberado { background: #050; color: white; border: 2px solid lime; }
+.id-card.liberado .carimbo { border-color: lime; color: lime; }

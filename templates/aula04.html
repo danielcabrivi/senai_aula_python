@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block conteudo %}
+    <h1>📊 Calculadora de Média</h1>
+    <p>Notas na URL: <code>/media/<strong>{{ nota1 }}</strong>/<strong>{{ nota2 }}</strong></code></p>
+
+    <div class="boletim-card {{ css }}">
+        <div class="notas-grid">
+            <div class="nota-box">
+                <span>Nota 1</span>
+                <strong>{{ nota1 }}</strong>
+            </div>
+            <div class="operador">+</div>
+            <div class="nota-box">
+                <span>Nota 2</span>
+                <strong>{{ nota2 }}</strong>
+            </div>
+        </div>
+        
+        <hr style="opacity: 0.3">
+        
+        <div class="resultado-final">
+            <p>Média Final</p>
+            <div class="circulo-media">{{ media_final }}</div>
+            <h2>{{ status }}</h2>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <h3>🎯 Missão 04: Lógica Matemática</h3>
+        <p>1. Teste <code>/media/10/4</code>. A média é 7. Está aprovado?</p>
+        <p>2. Abra <code>student_code/aula04_media.py</code>.</p>
+        <p>3. <strong>Desafio:</strong> Mude a regra da escola! Faça a média de aprovação ser <strong>8.0</strong>.</p>
+    </div>
+{% endblock %}

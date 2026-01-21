@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block conteudo %}
+    <h1>📦 Gerador de Itens</h1>
+    <p>Quantidade solicitada via URL: <strong>{{ qtd_input }}</strong></p>
+
+    <p>Total de itens gerados: {{ total }}</p>
+
+    <div class="grid-loja">
+        {% for item in lista %}
+            <div class="item-card {% if 'Raro' in item %} item-raro {% endif %}">
+                {{ item }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="atividade">
+        <h3>🎯 Missão 03: Loops e Lógica</h3>
+        <p>1. Mude a URL para <code>/loja/50</code> e veja a mágica.</p>
+        <p>2. Abra <code>student_code/aula03_repeticao.py</code>.</p>
+        <p>3. Entenda como o <code>for i in range()</code> cria itens automáticos.</p>
+        <p>4. <strong>Desafio:</strong> Mude o nome do item criado para "Escudo de Ouro".</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+services:
+  python-lab:
+    build: .
+    ports:
+      - "9090:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_DEBUG=1
